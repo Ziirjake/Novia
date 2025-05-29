@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TRABAJO FINALS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>EJE U-RBANATURA</h1>
+<br>
+  <div class="galeria-proyecto">
+    <div class="imagen-proyecto2">
+      <img src="isometrico.jpg" alt="">
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="participantes">
+    <div class="persona">
+      <img src="participante2.png" alt="Participante 1">
+      <p>SARA GIL LONDOÑO</p>
+    </div>
+    <div class="persona">
+      <img src="participante1.png" alt="Participante 2">
+      <p>SALOME HENAO PEREZ</p>
+    </div>
+  </div>
+    <br>
+
+    <h2>Vistas del Proyecto</h2>
+    <br>
+  <div class="galeria-proyecto">
+    <div class="imagen-proyecto">
+      <img src="VISTA 2.png" alt="Imagen del proyecto 1">
+    </div>
+    <div class="imagen-proyecto">
+      <img src="VISTA 3.png" alt="Imagen del proyecto 2">
+    </div>
+    <div class="imagen-proyecto">
+      <img src="VISTA 4.png" alt="Imagen del proyecto 3">
+    </div>
+    <div class="imagen-proyecto">
+      <img src="VISTA 6.png" alt="Imagen del proyecto 4">
+    </div>
+    <div class="imagen-proyecto">
+      <img src="VISTA 7.png" alt="Imagen del proyecto 5">
+    </div>
+    <div class="imagen-proyecto">
+      <img src="PARQUE CON CANCHA.png" alt="Imagen del proyecto 6">
+    </div>
+    <div class="imagen-proyecto">
+      <img src="EQUIPAMIENTO.png" alt="Imagen del proyecto 6">
+    </div>
+  </div>
+  <br>
+
+    <h2>Secciones Fugadas</h2>
+    <br>
+  <div class="galeria-proyecto">
+    <div class="imagen-proyecto3">
+      <img src="SECCIONES FUGADAS1.jpg" alt="detalle del proyecto 1">
+    </div>
+  </div>
+  <br>
+  <div class="galeria-proyecto">
+    <div class="imagen-proyecto3">
+      <img src="SECCIONES FUGADAS1.jpg" alt="detalle del proyecto 1">
+    </div>
+  </div>
+  <br>
+
+    <h2>Detalles del Proyecto</h2>
+    <br>
+    <h3>Detalles En Planta</h3>
+  <div class="galeria-proyecto">
+    <div class="imagen-proyecto5">
+      <img src="pdf.png" alt="detalle del proyecto 1">
+    </div>
+  </div>
+  <br>
+  <h3>Detalles Seccion Via</h3>
+  <div class="galeria-proyecto"></div>
+    <div class="imagen-proyecto4">
+      <img src="detalles.png" alt="detalle del proyecto 2">
+    </div>
+  </div>
+  <br>
+
+    <h2>Video del proyecto</h2>
+    <br>
+  <div class="contenedor-video">
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+
+  <div>
+    <p>"La arquitectura no es solo un refugio, sino un símbolo del espíritu humano. Cada edificio debe ser una obra de arte, una expresión de la belleza, del orden y de los ideales de quienes lo habitan."</p>
+    <p>— Frank Lloyd Wright</p>
+  </div>
+
+
+  <!-- Lightbox/Modal -->
+  <div id="modal" class="modal">
+    <span class="cerrar">&times;</span>
+    <img class="modal-contenido" id="imagen-modal">
+    <div id="pie-modal"></div>
+  </div>
+
+  <script>
+  // Lightbox para todas las imágenes
+  document.querySelectorAll('.persona img, .imagen-proyecto img, .imagen-proyecto2 img, .imagen-proyecto3 img, .imagen-proyecto4 img, .imagen-proyecto5 img').forEach(img => {
+    img.addEventListener('click', function() {
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('imagen-modal');
+      const pieModal = document.getElementById('pie-modal');
+      
+      modal.style.display = 'block';
+      modalImg.src = this.src;
+      pieModal.textContent = this.alt; // Muestra el texto "alt" como pie de foto
+    });
+  });
+
+  // Cerrar el modal
+  document.querySelector('.cerrar').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+  });
+
+  // Cerrar al hacer clic fuera de la imagen
+  window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('modal')) {
+      document.getElementById('modal').style.display = 'none';
+    }
+  });
+</script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+    apiKey: "AIzaSyCFBPyhGFeg6RuL0ZOlRiw_-5ScBbYny9w",
+    authDomain: "eje-u-rbanatura.firebaseapp.com",
+    databaseURL: "https://eje-u-rbanatura-default-rtdb.firebaseio.com",
+    projectId: "eje-u-rbanatura",
+    storageBucket: "eje-u-rbanatura.firebasestorage.app",
+    messagingSenderId: "544454726367",
+    appId: "1:544454726367:web:9188f846f4d382082a0f6a",
+    measurementId: "G-6S0753N7EZ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
