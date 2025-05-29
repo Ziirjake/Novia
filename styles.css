@@ -92,7 +92,7 @@ video {
 }
 
 .imagen-proyecto2 img {
-  width: 1150px;
+  max-width: 100%;
   height: 550px;
   object-fit: cover;
   border-radius: 8px;
